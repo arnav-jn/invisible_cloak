@@ -19,8 +19,8 @@ while cap.isOpened():
 
         red_mask = mask1+mask2
 
-        red_mask = cv2.morphologyEx(red_mask, cv2.MORPH_OPEN, np.ones((3, 3), np.unit8), iterations=10)
-        red_mask = cv2.morphologyEx(red_mask, cv2.MORPH_DILATE, np.ones((3, 3), np.unit8), iterations=1)
+        red_mask = cv2.morphologyEx(red_mask, cv2.MORPH_OPEN, np.ones((3, 3), np.uint8), iterations=10)
+        red_mask = cv2.morphologyEx(red_mask, cv2.MORPH_DILATE, np.ones((3, 3), np.uint8), iterations=1)
         part1 = cv2.bitwise_and(background, background, mask=red_mask)
 
         red_free = cv2.bitwise__not(red_mask)
