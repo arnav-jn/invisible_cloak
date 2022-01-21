@@ -23,7 +23,7 @@ while cap.isOpened():
         red_mask = cv2.morphologyEx(red_mask, cv2.MORPH_DILATE, np.ones((3, 3), np.uint8), iterations=1)
         part1 = cv2.bitwise_and(background, background, mask=red_mask)
 
-        red_free = cv2.bitwise__not(red_mask)
+        red_free = cv2.bitwise_not(red_mask)
 
         part2 = cv2.bitwise_and(current_frame, current_frame, mask=red_free)
 
